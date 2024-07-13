@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+struct Student {
+    char name[50];
+    int age;
+    int grade;
+};
+
+int main() {
+    struct Student student1 = {"Alice", 15, 9};
+    struct Student student2 = {"Bob", 14, 8};
+
+    printf("Student 1:\n");
+    printf("Name: %s\n", student1.name);
+    printf("Age: %d\n", student1.age);
+    printf("Grade: %d\n", student1.grade);
+    printf("\n");
+
+    printf("Student 2:\n");
+    printf("Name: %s\n", student2.name);
+    printf("Age: %d\n", student2.age);
+    printf("Grade: %d\n", student2.grade);
+
+    return 0;
+}
