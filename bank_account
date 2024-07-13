@@ -1,0 +1,40 @@
+#include <stdio.h>
+    int accountNumber;
+    char accountHolderName[50];
+    float balance;
+};
+
+void deposit(struct BankAccount *account, float amount);
+void withdraw(struct BankAccount *account, float amount);
+void displayBalance(struct BankAccount account);
+
+int main() {
+    
+    struct BankAccount myAccount = { 1001, "John Doe", 5000.0 };
+
+    deposit(&myAccount, 1500.0);
+    withdraw(&myAccount, 2000.0);
+    displayBalance(myAccount);
+
+    return 0;
+}
+
+void deposit(struct BankAccount *account, float amount) {
+    account->balance += amount;
+    printf("Deposited %.2f\n", amount);
+}
+
+void withdraw(struct BankAccount *account, float amount) {
+    if (amount <= account->balance) {
+        account->balance -= amount;
+        printf("Withdrawn %.2f\n", amount);
+    } else {
+        printf("Insufficient balance\n");
+    }
+}
+
+void displayBalance(struct BankAccount account) {
+    printf("Account Number: %d\n", account.accountNumber);
+    printf("Account Holder Name: %s\n", account.accountHolderName);
+    printf("Current Balance: %.2f\n", account.balance);
+}
