@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+void display(int r){
+    int x,y;
+    for(x=-r;x<=r;x++)
+    {  
+        printf("\t\t\t");
+        for(y=-r;y<=r;y++)
+        {
+            if( x*x+y*y == r*r) 
+                printf("*");
+            else
+                printf(" ");
+        }
+        printf("\n");
+    }
+}
+int main(){
+    int r;
+    printf("Enter radius:");
+    scanf("%d",&r);
+    display(r);
+    return 0;
+}
